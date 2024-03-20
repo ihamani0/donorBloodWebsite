@@ -1,0 +1,617 @@
+/*------------- start golobale Selecter -------------*/
+:root{
+    --color-main : #C01A30;
+    --color-container : #f6f6f6;  
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+} 
+body{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;}
+
+.container{
+    margin-left: auto;
+    margin-right: auto; 
+}
+/* -----------------Media Q----------------------- */
+@media (max-width : 768px) {
+    section .landingpage .blood{
+        display: none;
+    }
+}
+@media (min-width : 768px) {
+    .container{
+        width: 750px;
+    }
+}
+@media (min-width : 992px) {
+    .container{
+        width: 970px;
+    }
+}
+@media (min-width : 1200px) {
+    .container{
+        width: 1120px;
+    }
+}
+.le-spa{
+    letter-spacing: 10px;
+}
+/*  --------------------------------------------------------*/
+/*------------- End golobale Selecter -------------*/
+/* -----------Start scroolbox------------- */
+.scroolbox{
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height:36px;
+    background-color: var(--color-main);
+    border-radius: 40%;
+    bottom: 15px;
+    right: 25px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.scroolbox i{
+    color: #cecfcf;
+}
+
+/* -----------END scroolbox------------- */
+/*---------------- Start nav Bar ---------------------- */
+/*--------- containeer-------- */
+header .container{
+    background-color: var(--color-container);
+    border-radius: 15px;
+    margin-top: 10px;
+    padding: 10px 10px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*------------------------- */
+
+/*----- Satrt Logo----- */
+.container .logo{
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.container .logo a{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+
+.container .logo span{
+    font-weight: bold; 
+    margin-left: 10px;
+}
+.container .logo i{
+    margin-left: 19px;
+    color:var(--color-main);
+}
+
+/*----- END Logo----- */
+/* -----------Start humburger menu-------------- */
+header .container .hamburger{
+    
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: auto;
+    gap: -12px;
+    cursor: pointer;
+}
+header .container .hamburger .bar{
+    width: 100%;
+    height: 3px;
+    margin: 2px 0;
+    background-color: #111;
+    transition: .3s;
+}
+header .container .hamburger .bar:nth-child(2){
+    width: calc(100% - 8px);
+    align-self: flex-end;
+}
+/*--------------- Start Media Q For navBar------------ */
+@media (max-width: 768px){
+    /* Border Radius for nav bar  */
+    header .container {
+        border-radius: 15px 15px 0 0 ;
+    }
+    /* Humberger => flex to show  */
+    header .container .hamburger{
+        display: flex;
+    }
+    /* Styling list menu link */
+    header .container .links .list{
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        background-color: var(--color-container);
+        text-align: center;
+        border-radius: 0 0 20px 20px ;
+        
+    }
+     /* Hidden links menu opacity or postion left */
+    header .container .links{
+        position: fixed;
+        /* left: -100%; */
+        opacity: 0;
+        top: 78px;
+        z-index: -10;
+        width: 100%;
+    }
+    /* show links div with postion or opacity */
+    header .container .links.active{
+        /* left: 0; */
+        opacity: 1;
+        z-index: 10;
+    }
+
+
+    /* Remove  user icon */
+    header .container .links .list:last-child i {
+        display: none;
+    }
+    /* -------------Animation  humberger ----------- */
+    header .container .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    header .container .hamburger.active .bar:nth-child(1){
+        transform: translateY(5px)rotate(-45deg);
+    }
+    header .container .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px)rotate(45deg);
+    }
+    
+    
+}
+/* ------------END Media Q------------------- */
+
+/* --------------Satrt LIST Links ----------------- */
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    transition: all .5s ease-in-out;
+
+}
+.links ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    
+}
+.links ul li{
+    position: relative;
+    margin: 10px 7px;
+    width: fit-content;
+}
+.links ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 0 4px;
+    transition: .3s ease-in-out;
+}
+.links ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color:#f3482e ;
+    transition:  .3s ease-in-out;
+}
+.links ul li a:hover{
+    color: #111;
+}
+.links ul li a:hover::after{
+    width: 100%; 
+}
+.links .list .loge-in{
+    display: flex;
+    align-items: center;
+}
+/* ---------------------------------END LIST Links ----------------- */
+/*----------------------------------- END nav Bar ---------------------- */
+/*-------------------------------------- LANding Page -------------------------------------- */
+
+section .container{
+    height: calc(100vh - (85.20px + 22px) );
+    background-color: var(--color-container);
+
+    /* bacground image */
+    background-image: url(../image/blood.svg);
+    background-repeat: no-repeat;
+    background-position-y: -110px;
+    background-position-x: -180px;
+
+     /* End bacground image */
+    border-radius: 15px;
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* image blood on conatner */
+section .landingpage {
+    position: relative;
+    overflow: hidden;
+}
+section .landingpage .blood{
+    width: 500px;
+    height: 300px;
+    transform: translate(-25%,-15%);
+    position: absolute;
+}
+/* -----------------------------------Start part1 from contaner LANding Page ------------------- */
+section .container .part1{
+    align-self: flex-end;
+    margin-bottom: 80px;
+}
+/* header for part 1 `blode donate` */
+section .container .part1 h1 {
+    margin: 0;
+    width: 196px;
+    max-width: 196px ;
+    font-size: 29px;
+}
+/* paragraph for part 1 `save life` */
+
+section .container .part1 p {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    
+}
+/* ------------------------------- */
+section .container .part1 .donate-now{
+    background-color: #fff;
+    height: 40px;
+    width:100%;
+    border-radius: 35px 0 35px 35px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+section .container .part1 .donate-now p{
+    font-size: 13px;
+    font-weight:100px;
+    margin-left: 13px;
+    cursor: default;
+}
+/* Button for login in landing page ==>2 */
+section .container .part1 .donate-now .btn-donate{
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    border-radius:  50px  0 50px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+/* links for login in landing page ==>1 */
+
+section .container .part1 .donate-now a{
+    text-decoration: none;
+    color: #fff;
+    margin-right: 13px;
+
+}
+section .container .part1 .donate-now .btn-donate:hover{
+    background-color: #99071a;
+}
+section .container .part1 .donate-now .btn-donate i{transition: .3s;}
+section .container .part1 .donate-now .btn-donate i:hover{transform: translate(2px);}
+/* -----------------------------------END part1 from contaner LANding Page ------------------- */
+/* -----------------------------------Start part2 from contaner LANding Page ------------------- */
+@media (max-width : 768px ) {
+    section .container .part2-img {
+        width: 0;
+        height: 0; 
+    }
+    section .container .part2-img .min-container,
+    section .container .part2-img img{
+        display: none;
+    }
+    .landingpage .container{
+        height: 50vh;
+    }
+    section .container .part1 {
+        margin-left: 30%;
+    }
+
+}
+section .container .part2-img{
+    width: 400px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+}
+section .container .part2-img .min-container {
+    width: 350px;
+    height: 100%;
+    background-color: #e2444c;
+    overflow: hidden;
+    border-radius:  50% 0 50% 50%;
+}
+section .container .part2-img img{
+    width:800px;
+    height: 500px;
+    transform: translate(-23%,-20%);
+    
+}
+
+
+/* -----------------------------------END part2 from contaner LANding Page ------------------- */
+/* --------------------------------------End LANding Page -------------------------------------- */
+
+/* --------------------------------------Start feature section -------------------------------------- */
+
+.feature {
+    height: auto;
+    margin: 30px 0px;
+  /* padding: 10px; */
+}
+
+.feature .container{
+    /* background-color: var(--color-container);  */
+    border-radius: 15px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat( auto-fill , minmax(300px,1fr));
+    gap: 20px;
+    /* margin: 20px auto; */
+}
+.feature .container .feat{
+    /* margin: 30px 0px; */
+    text-align: center;
+}
+.feature .container .feat i {
+    font-size: 30px;
+    color: #fb5760;
+    margin: 10px;
+}
+.feature .container .feat h3 {
+    font-weight: 600;
+    color: #333;
+    margin:10px 0;
+}
+.feature .container .feat p {
+    font-size: 16px;
+    font-weight: 300;
+    margin:10px 0 ;
+}
+
+/* --------------------------------------End feature section -------------------------------------- */
+/* ------------------------------Start Knoledg Section-------------------------------------- */
+/*------ Start speciale heading ------- */
+.s-heading{
+    margin: 0;
+    color: #cecfcf;
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    text-align: center;
+}
+.s-heading 
++ p {
+    color: #444;
+    font-size: 17px;
+    font-weight: 450;
+    text-align: center;
+    letter-spacing: 1px;
+}
+/*------ END speciale heading ------- */
+/* ---------------Start Min Container -------------- */
+.knowledg .container .min-con{
+    background-image: url(../image/hurt.svg);
+    background-repeat: no-repeat;
+    background-size: 45% auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
+    margin-top: 25px;
+    gap: 10px;
+    
+}
+/* ----------div contine list(span)------- */
+.knowledg .container .min-con div{
+    min-height: 50px;
+    max-height: auto;
+}
+/* ------------Span with dispaly flex -------------- */
+.knowledg .container .min-con div span{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+/* -------------Start styling div( class = item / item1 )  */
+.knowledg .container .min-con .item{
+    background-color:#f6f6f6; 
+    box-shadow: 10px 10px 15px #abaaaa;
+    border-radius: 15px;
+    margin: 5px;
+}
+.knowledg .container .min-con .item-1{
+    background-color:#f6f6f6; 
+    box-shadow: 10px 10px 15px #abaaaa;
+    border-radius: 15px;
+    margin: 5px;
+    padding: 10px;
+}
+.knowledg .container .min-con div span p {
+    font-weight: 600;
+}
+/* -------------END styling div( class = item / item1 )  */
+
+/* ------------ START Icon for list knowledge */
+.knowledg .container .min-con div span i {
+    font-size: 0.8rem;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+/* ------------END Icon for list knowledge */
+
+
+/* Meadia Q for the knowledg section Responsive  */
+@media (max-width : 992px) {
+    .knowledg .container .min-con .disp {
+        display: none;
+    }
+    .knowledg .container .min-con .item , 
+    .knowledg .container .min-con .item-1{
+        box-shadow: none;
+    }
+}
+/* ---------------END Min Container -------------- */
+/* -----------------------------------------------  */
+/* ------------------------------Start About Section------------------------------------ */
+/* start  */
+.About {
+
+}
+.About .container{
+    
+}
+.About .min-about {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding:10px;
+    overflow: hidden;
+}
+/*---------- Start Media Q ----------*/
+@media (max-width : 768px) {
+    .About .min-about {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .About .min-about img{
+        
+    }
+}
+/* -------------------- */
+.About .min-about img {
+    max-width:50%;
+    min-width: 300px;
+}
+.About .min-about .paragraphe {
+    max-width:50%;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.About .min-about .paragraphe p {
+    position: relative;
+    line-height: 30px;
+    font-weight: 500;
+    color: #777;
+    width: 100%;
+    text-indent: 30px;
+}
+
+.About .min-about .paragraphe p::after{
+    content: '';
+    width: 50%;
+    border-radius: 10%;
+    height: 3px;
+    background:linear-gradient(to left,#fb5760 , #99071a);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+}
+/* -------------Start footer ----------------------- */
+footer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-container);
+}
+footer .part-1 {
+    margin-left: 30px;
+}
+footer .part-1 i {
+    display: block;
+    margin: 10px 0;
+    color: #C01A30;
+   
+}
+footer .part-1 p {
+    margin: 10px 0;
+    font-size: 1rem;
+    font-weight: 300;
+        
+}
+footer .part-1 p span {
+    color: var(--color-main);
+    font-weight:400 ;
+    margin: 0 5px;
+    font-size: 0.9rem;
+}
+
+
+footer .part-2 {
+    margin-right: 30px;
+}
+footer .part-2 .icon i {
+    margin: 0 15px;
+    color: #888;
+}
+@media (max-width:768px) {
+    footer{
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+    }
+    footer .part-1 i {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    footer .part-1 p{
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    footer .part-2{
+       align-self: center;
+    }
+    footer .part-2 .icon{
+        width: 100%;
+    }
+    footer .part-2 .icon i{
+        font-size: 1rem;
+    }
+}
+
+
